@@ -7,6 +7,9 @@ TEXT = (
     "The day is long, and it is not waiting on you."
 )
 
+if not 1 <= len(TEXT) <= 280:
+    raise SystemExit("entry text out of range")
+
 os.makedirs("/output", exist_ok=True)
 with open("/output/entry.txt", "w", encoding="utf-8") as f:
     f.write(TEXT)
